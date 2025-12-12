@@ -183,7 +183,10 @@ header {
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .btn-primary {
@@ -207,6 +210,17 @@ header {
     background: linear-gradient(135deg, var(--accent-pink), var(--primary-purple));
     color: white;
     transform: translateY(-3px);
+}
+
+.hero-buttons .btn-primary i,
+.hero-buttons .btn-secondary i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.hero-buttons .btn-primary:hover i,
+.hero-buttons .btn-secondary:hover i {
+    transform: translateY(-2px);
 }
 
 .hero-image {
@@ -1182,10 +1196,8 @@ section {
 .cert-btn {
     background: linear-gradient(135deg, var(--accent-pink), var(--primary-purple));
     color: white;
-    border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
-    cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
@@ -1195,6 +1207,9 @@ section {
     overflow: hidden;
     text-decoration: none;
     display: inline-block;
+    border: none;
+    cursor: pointer;
+    text-align: center;
 }
 
 .cert-btn::before {
@@ -1798,21 +1813,48 @@ section:nth-child(even) {
 section:nth-child(odd) {
     animation-delay: 0.3s;
 }
-.hero-buttons a {
-    text-decoration: none;
+
+/* GitHub link styles in modal */
+.github-link-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.github-project-link {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-pink), var(--primary-purple));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.github-project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+}
+
+.repo-info {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
 }
 
-.hero-buttons .btn-primary i,
-.hero-buttons .btn-secondary i {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
+.project-detail ul ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
 }
 
-.hero-buttons .btn-primary:hover i,
-.hero-buttons .btn-secondary:hover i {
-    transform: translateY(-2px);
+.project-detail ul ul li {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
 }
