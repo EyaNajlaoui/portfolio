@@ -1858,3 +1858,205 @@ section:nth-child(odd) {
     margin-bottom: 0.3rem;
     font-size: 0.95rem;
 }
+/* Associations & Clubs Section */
+.associations {
+    background: var(--background-alt);
+    padding: 80px 0;
+    position: relative;
+}
+
+.associations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(192, 38, 211, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.associations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.association-card {
+    background: var(--background-card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.association-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--accent-pink), var(--primary-purple));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.association-card:hover::before {
+    transform: scaleX(1);
+}
+
+.association-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-pink);
+    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.3);
+}
+
+.association-logo {
+    width: 100%;
+    height: 180px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.association-card:hover .association-logo {
+    transform: scale(1.02);
+}
+
+.full-cover-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.association-card:hover .full-cover-logo {
+    transform: scale(1.05);
+}
+
+.association-info {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.association-info h3 {
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    min-height: 3rem;
+}
+
+.association-info p {
+    color: var(--accent-pink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: auto;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Responsive Associations */
+@media (max-width: 1200px) {
+    .associations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 800px;
+    }
+    
+    .association-logo {
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .associations-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 1rem;
+    }
+    
+    .association-card {
+        flex-direction: row;
+        min-height: 120px;
+    }
+    
+    .association-logo {
+        width: 120px;
+        height: auto;
+        flex-shrink: 0;
+        padding: 0.5rem;
+    }
+    
+    .association-info {
+        padding: 1rem;
+        text-align: left;
+        justify-content: center;
+    }
+    
+    .association-info h3 {
+        font-size: 1rem;
+        min-height: auto;
+        margin-bottom: 0.5rem;
+    }
+    
+    .association-info p {
+        font-size: 0.9rem;
+        padding-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .association-card {
+        min-height: 100px;
+    }
+    
+    .association-logo {
+        width: 100px;
+        padding: 0.3rem;
+    }
+    
+    .association-info {
+        padding: 0.8rem;
+    }
+    
+    .association-info h3 {
+        font-size: 0.95rem;
+    }
+    
+    .association-info p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Logo placeholder styling */
+.association-logo img[src*="placeholder"] {
+    background: linear-gradient(135deg, var(--accent-pink), var(--primary-purple));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 1rem;
+    text-align: center;
+}
